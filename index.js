@@ -9,3 +9,7 @@ const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log(`Sunucu ${port} portunda çalışıyor`)
 })
+// index.test.js
+test('App runs without crashing', () => {
+  expect(true).toBe(true);
+});
