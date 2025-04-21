@@ -25,7 +25,7 @@ jobs:
         run: npm test
 
       - name: Build Docker image
-        run: |
+        run: 
           docker build -t my-second-app:latest .
 
       - name: Log in to DockerHub
