@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main
+      - main  # Sadece main branch'e push olunca çalışacak
 
 jobs:
   build:
@@ -21,10 +21,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Run tests
+        run: npm test
 
       - name: Build Docker image
-        run: 
-          docker build -t my-second-app:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/my-second-app:latest .
 
       - name: Log in to DockerHub
         uses: docker/login-action@v2
